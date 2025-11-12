@@ -1,0 +1,28 @@
+[project]
+name = "auth0_import_formatter_energy-co-op"
+version = "0.0.1"
+authors = [
+  { name="Energy Co-op", email="hello@windcoop.co.uk" },
+]
+description = "Energy Co-op Auth0 Import Formatter"
+readme = "README.md"
+requires-python = ">=3.14"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "CC-BY-NC-SA-4.0"
+license-files = ["LICEN[CS]E*"]
+dependencies = [
+  "pandas",
+  "openpyxl",
+  "odfpy"
+]
+
+[project.urls]
+Homepage = "https://github.com/Energy-Co-op/auth0-import-formatter"
+Issues = "https://github.com/Energy-Co-op/auth0-import-formatter/issues"
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"

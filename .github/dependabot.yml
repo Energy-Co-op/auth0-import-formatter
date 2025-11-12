@@ -1,0 +1,19 @@
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "Dependabot: "
+    allow:
+      # Allow direct updates for all packages.
+      - dependency-type: "direct"
+    groups:
+      python-packages:
+        patterns:
+          - "*"
+    assignees:
+      - "EM-Creations"
+      - "hypercrypt"
