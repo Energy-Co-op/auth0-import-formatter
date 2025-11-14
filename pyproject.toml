@@ -16,7 +16,8 @@ license-files = ["LICEN[CS]E*"]
 dependencies = [
   "pandas",
   "openpyxl",
-  "odfpy"
+  "odfpy",
+  "configparser"
 ]
 
 [project.urls]
