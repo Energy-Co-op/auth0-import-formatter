@@ -1,4 +1,4 @@
-import pandas, configparser, json
+import pandas, configparser, json, math
 
 class Formatter:
     """
@@ -35,15 +35,18 @@ class Formatter:
 
         for row in content.itertuples():
             if (start_row <= row.Index):
-                first_name = row[first_name_column_index]
-                last_name = row[last_name_column_index]
-                email = row[email_column_index]
+                first_name: str = row[first_name_column_index]
+                last_name: str = row[last_name_column_index]
+                email: str = row[email_column_index]
                 capacity = row[capacity_column_index]
                 print(f"Processed row: First Name: {first_name}, Last Name: {last_name}, Email: {email}, Capacity: {capacity}")
 
+                if (last_name is None or (type(last_name) == float or type(last_name) == int and math.isnan(last_name))):
+                    last_name = "Unknown" # Last name can't be 0 characters
+
                 row_object = {
                     "email": email,
-                    "email_verfied": False,
+                    "email_verified": False,
                     "given_name": first_name,
                     "family_name": last_name,
                     "app_metadata": {
